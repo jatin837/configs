@@ -1,0 +1,30 @@
+env:
+  #TERM vars
+  #
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 24
+    lines: 24
+  padding:
+    x: 10
+    y: 9
+
+background_opacity: 0.70
+
+title: Alacritty
+
+scrolling:
+  history: 50
+  multiplier: 2
+
+tabspaces: 2
+
+font:
+  family: Hack 
+
+colors:
+  primary:
+    background: '0x282c34'
+    foreground: '0xffffff'
