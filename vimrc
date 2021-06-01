@@ -19,6 +19,7 @@ set tabstop=2
 set shiftwidth=2 
 set autoindent
 set smartindent
+set noshowmode
 set clipboard=unnamedplus
 let g:airline#extensions#tabline#left_set = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
