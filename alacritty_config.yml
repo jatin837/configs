@@ -11,7 +11,7 @@ window:
     x: 10
     y: 9
 
-background_opacity: 0.70
+background_opacity: 0.90
 
 title: Alacritty
 
@@ -26,5 +26,7 @@ font:
 
 colors:
   primary:
-    background: '0xc749c9'
+    background: '0x031221'
     foreground: '0xffffff'
+
+bold: '0xe67cdb'
