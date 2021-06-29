@@ -52,3 +52,4 @@ let g:airline#extensions#tabline#formatter = 'default'
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
+	
