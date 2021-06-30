@@ -11,5 +11,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 - [ ] Enable copy paste in tmux
 - [ ] Add shortcuts for resize and switch tabs in vim
-- [ ] install EVIL mode for emacs
+- [X] install EVIL mode for emacs
 - [ ] change tmux prefix from C-a to C-space
