@@ -9,6 +9,7 @@ set smartindent
 set noshowmode
 set clipboard=unnamedplus
 set mouse=a
+set conceallevel=2
 
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,11 +20,15 @@ call vundle#begin()
 	Plugin 'preservim/nerdtree'
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
+	Plugin 'godlygeek/tabular'
+	Plugin 'plasticboy/vim-markdown'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+	Plug 'jceb/vim-orgmode'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -38,4 +43,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
-	
+
+packloadall
+silent! helptags ALL
