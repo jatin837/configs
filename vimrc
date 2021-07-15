@@ -16,6 +16,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 set directory=$HOME/.vim/swapfiles//
 call vundle#begin()
+	Plugin 'preservim/nerdcommenter'
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'preservim/nerdtree'
 	Plugin 'vim-airline/vim-airline'
