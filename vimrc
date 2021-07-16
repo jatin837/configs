@@ -11,6 +11,10 @@ set clipboard=unnamedplus
 set mouse=a
 set conceallevel=2
 
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
