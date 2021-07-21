@@ -19,6 +19,7 @@ map <C-t><right> :tabn<cr>
 set rtp+=~/.vim/bundle/Vundle.vim
 
 set directory=$HOME/.vim/swapfiles//
+
 call vundle#begin()
 	Plugin 'preservim/nerdcommenter'
 	Plugin 'VundleVim/Vundle.vim'
@@ -27,8 +28,20 @@ call vundle#begin()
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'godlygeek/tabular'
 	Plugin 'plasticboy/vim-markdown'
-
+	Plugin 'dense-analysis/ale'
+	Plugin 'Shougo/vimproc.vim'
+	Plugin 'eagletmt/ghcmod-vim'
 call vundle#end()            " required
+
+let g:ale_linters = {
+			\ 'haskell': ['hlint', 'hdevtools', 'hfmt'],
+			\}
+
+
+nnoremap <Leader>ht :GhcModType<cr>
+nnoremap <Leader>htc :GhcModTypeClear<cr>
+autocmd FileType haskell nnoremap <buffer> <leader>? :call ale#cursor#ShowCursorDetail()<cr>
+
 filetype plugin indent on    " required
 
 call plug#begin('~/.vim/plugged')
