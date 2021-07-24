@@ -6,6 +6,13 @@
 (tool-bar-mode 0)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (setq default-tab-width 2)
+
+;;use larger font
+(setq default-frame-alist '((font . "Source Code Pro-14")))
+
+(set-frame-parameter (selected-frame) 'alpha '(95 50))
+(add-to-list 'default-frame-alist '(alpha 85 50))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
