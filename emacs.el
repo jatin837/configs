@@ -12,7 +12,7 @@
 
 (set-frame-parameter (selected-frame) 'alpha '(95 70))
 (add-to-list 'default-frame-alist '(alpha 95 70))
-
+(setq create-lockfiles nil) 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,6 +25,7 @@
  '(custom-enabled-themes '(misterioso))
  '(custom-safe-themes
    '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" default))
+ '(org-fontify-done-headline t)
  '(package-selected-packages
    '(use-package org-bullets magit doom-modeline solarized-theme evil ##)))
 (custom-set-faces
@@ -142,3 +143,4 @@
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
  '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 
+(put 'downcase-region 'disabled nil)
