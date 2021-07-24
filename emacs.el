@@ -13,6 +13,7 @@
 (set-frame-parameter (selected-frame) 'alpha '(95 70))
 (add-to-list 'default-frame-alist '(alpha 95 70))
 (setq create-lockfiles nil) 
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
