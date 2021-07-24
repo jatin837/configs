@@ -16,7 +16,9 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes '(misterioso))
- '(package-selected-packages '(evil ##)))
+ '(custom-safe-themes
+   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" default))
+ '(package-selected-packages '(solarized-theme evil ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -27,7 +29,7 @@
 (require 'ido)
 (ido-mode t)
 (require 'rust-mode)
-
+(load-theme 'solarized-dark t)
 ;;(require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
