@@ -7,8 +7,6 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (setq default-tab-width 2)
 
-;;use larger font
-(setq default-frame-alist '((font . "Source Code Pro-14")))
 
 (set-frame-parameter (selected-frame) 'alpha '(95 70))
 (add-to-list 'default-frame-alist '(alpha 95 70))
@@ -61,7 +59,6 @@
 (require 'ido)
 (ido-mode t)
 (require 'rust-mode)
-(load-theme 'solarized-dark t)
 
 ;;(require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
