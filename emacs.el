@@ -26,11 +26,13 @@
    '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" default))
  '(org-fontify-done-headline t)
  '(package-selected-packages
-   '(use-package org-bullets magit doom-modeline solarized-theme evil ##)))
+   '(haskell-mode use-package org-bullets magit doom-modeline solarized-theme evil ##)))
 
 (require 'ido)
 (ido-mode t)
 (require 'rust-mode)
+(require 'haskell-mode)
+
 
 ;;(require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -38,7 +40,7 @@
 ;;(package-initialize)
 ;;(package-refresh-contents)
 
-(package-install 'use-package)
+;(package-install 'use-package)
 (require 'use-package)
 
 (require 'doom-modeline)
@@ -65,3 +67,10 @@
 (setq org-bullets-face-name (quote org-bullet-face))
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (setq org-bullets-bullet-list '("◉" "○" "✸" "✿" "●" "◇" "✚" "✜" "☯" "◆" "♠" "♣" "♦" "☢" "❀" "◆" "◖" "▶" ))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'downcase-region 'disabled nil)
