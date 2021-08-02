@@ -8,24 +8,24 @@
 (setq default-tab-width 2)
 
 (setq initial-scratch-message "
- ████████▄       ▄█    ▄████████     ███      ▄█  ███▄▄▄▄   
- ███   ▀███     ███   ███    ███ ▀█████████▄ ███  ███▀▀▀██▄ 
- ███    ███     ███   ███    ███    ▀███▀▀██ ███▌ ███   ███ 
- ███    ███     ███   ███    ███     ███   ▀ ███▌ ███   ███ 
- ███    ███     ███ ▀███████████     ███     ███▌ ███   ███ 
- ███    ███     ███   ███    ███     ███     ███  ███   ███ 
- ███   ▄███     ███   ███    ███     ███     ███  ███   ███ 
- ████████▀  █▄ ▄███   ███    █▀     ▄████▀   █▀    ▀█   █▀  
-							▀▀▀▀▀▀                                          
-
-   ▄███████▄    ▄████████ ███▄▄▄▄   ████████▄     ▄████████ ▄██   ▄   
-  ███    ███   ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███ ███   ██▄ 
-  ███    ███   ███    ███ ███   ███ ███    ███   ███    █▀  ███▄▄▄███ 
-  ███    ███   ███    ███ ███   ███ ███    ███  ▄███▄▄▄     ▀▀▀▀▀▀███ 
-▀█████████▀  ▀███████████ ███   ███ ███    ███ ▀▀███▀▀▀     ▄██   ███ 
-  ███          ███    ███ ███   ███ ███    ███   ███    █▄  ███   ███ 
-  ███          ███    ███ ███   ███ ███   ▄███   ███    ███ ███   ███ 
- ▄████▀        ███    █▀   ▀█   █▀  ████████▀    ██████████  ▀█████▀  
+;;████████▄       ▄█    ▄████████     ███      ▄█  ███▄▄▄▄   
+;;███   ▀███     ███   ███    ███ ▀█████████▄ ███  ███▀▀▀██▄ 
+;;███    ███     ███   ███    ███    ▀███▀▀██ ███▌ ███   ███ 
+;;███    ███     ███   ███    ███     ███   ▀ ███▌ ███   ███ 
+;;███    ███     ███ ▀███████████     ███     ███▌ ███   ███ 
+;;███    ███     ███   ███    ███     ███     ███  ███   ███ 
+;;███   ▄███     ███   ███    ███     ███     ███  ███   ███ 
+;;████████▀  █▄ ▄███   ███    █▀     ▄████▀   █▀    ▀█   █▀  
+;; 						▀▀▀▀▀▀                                          
+ 
+;;  ▄███████▄    ▄████████ ███▄▄▄▄   ████████▄     ▄████████ ▄██   ▄   
+;; ███    ███   ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███ ███   ██▄ 
+;; ███    ███   ███    ███ ███   ███ ███    ███   ███    █▀  ███▄▄▄███ 
+;; ███    ███   ███    ███ ███   ███ ███    ███  ▄███▄▄▄     ▀▀▀▀▀▀███ 
+;;█████████▀  ▀███████████ ███   ███ ███    ███ ▀▀███▀▀▀     ▄██   ███ 
+;; ███          ███    ███ ███   ███ ███    ███   ███    █▄  ███   ███ 
+;; ███          ███    ███ ███   ███ ███   ▄███   ███    ███ ███   ███ 
+;;▄████▀        ███    █▀   ▀█   █▀  ████████▀    ██████████  ▀█████▀  
 
 ;; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To create a file, visit it with C-x C-f and enter text in its buffer.
@@ -47,13 +47,33 @@
  '(custom-enabled-themes '(misterioso))
  '(custom-safe-themes
    '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" default))
+ '(org-agenda-files '("~/org/work.org"))
  '(org-fontify-done-headline t)
  '(package-selected-packages
-   '(haskell-mode use-package org-bullets magit doom-modeline solarized-theme evil ##)))
+   '(lsp-ui lsp-mode haskell-mode use-package org-bullets magit doom-modeline solarized-theme evil ##)))
 
 (require 'ido)
 (ido-mode t)
 (require 'rust-mode)
+(use-package lsp-mode
+  :ensure
+  :commands lsp
+  :custom
+  ;; what to use when checking on-save. "check" is default, I prefer clippy
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  (lsp-eldoc-render-all t)
+  (lsp-idle-delay 0.6)
+  (lsp-rust-analyzer-server-display-inlay-hints t)
+  :config
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+(use-package lsp-ui
+  :ensure
+  :commands lsp-ui-mod  :custom
+  (lsp-ui-peek-always-show t)
+  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-doc-enable nil))
+
 (require 'haskell-mode)
 
 
@@ -81,6 +101,18 @@
 
 ;; customizing org mode
 
+(setq org-agenda-files
+      (list "~/org/work.org"
+	    "~/org/school.org" 
+            "~/org/home.org"))
+
+(require 'org)
+
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+
+(setq org-log-done t)
 ;; hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc.)
 (setq org-hide-emphasis-markers t)
 ;;set up a font-lock substitution for list markers
@@ -105,4 +137,4 @@
 ;; (package-initialize)
 ;; (package-refresh-contents)
 
-;; (package-install 'use-package)
+;; (package-install 'use-package)		;
