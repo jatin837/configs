@@ -102,15 +102,14 @@
 ;; customizing org mode
 
 (setq org-agenda-files
-      (list "~/org/work.org"
-	    "~/org/school.org" 
-            "~/org/home.org"))
+      (list "~/org/task.org"))
 
 (require 'org)
 
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c d") 'org-deadline)
 
 (setq org-log-done t)
 ;; hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc.)
