@@ -1,11 +1,12 @@
 (setq inhibit-startup-screen t)
+(setq visible-bell nil)
+(setq default-tab-width 2)
+
 (scroll-bar-mode -1)
 (set-fringe-mode 10)
-(setq visible-bell nil)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(setq default-tab-width 2)
 
 (setq initial-scratch-message "
 ;;████████▄       ▄█    ▄████████     ███      ▄█  ███▄▄▄▄   
@@ -50,10 +51,20 @@
  '(org-agenda-files '("~/org/work.org"))
  '(org-fontify-done-headline t)
  '(package-selected-packages
-   '(lsp-ui lsp-mode haskell-mode use-package org-bullets magit doom-modeline solarized-theme evil ##)))
+   '(smex lsp-ui lsp-mode haskell-mode use-package org-bullets magit doom-modeline solarized-theme evil ##)))
 
 (require 'ido)
 (ido-mode t)
+
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 (require 'rust-mode)
 (use-package lsp-mode
   :ensure
@@ -76,12 +87,6 @@
 
 (require 'haskell-mode)
 
-
-;;(require 'package)
-;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;;(package-initialize)
-;;(package-refresh-contents)
 
 ;(package-install 'use-package)
 (require 'use-package)
