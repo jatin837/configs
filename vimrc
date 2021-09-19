@@ -31,7 +31,8 @@ call vundle#begin()
 	Plugin 'dense-analysis/ale'
 	Plugin 'Shougo/vimproc.vim'
 	Plugin 'eagletmt/ghcmod-vim'
-call vundle#end()            " required
+	Plugin 'xuhdev/vim-latex-live-preview'
+call vundle#end()
 
 let g:ale_linters = {
 			\ 'haskell': ['hlint', 'hdevtools', 'hfmt'],
@@ -57,6 +58,7 @@ call plug#end()
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_set = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:livepreview_previewer = 'okular'
 
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
