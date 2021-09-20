@@ -89,14 +89,20 @@
 
 
 ;(package-install 'use-package)
+(unless (package-installed-p 'use-package)
+	(package-install 'use-package))
+
 (require 'use-package)
+
+(unless (package-installed-p 'doom-modeline)
+	(package-install 'doom-modeline))
 
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
 ;; Download Evil
-;;(unless (package-installed-p 'evil)
-;;	(package-install 'evil))
+(unless (package-installed-p 'evil)
+	(package-install 'evil))
 
 ;; Enable Evil
 (require 'evil)
@@ -106,10 +112,14 @@
 
 ;; customizing org mode
 
+(unless (package-installed-p 'org)
+	(package-install 'org))
+
+(require 'org)
+
 (setq org-agenda-files
       (list "~/org/task.org"))
 
-(require 'org)
 
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -133,7 +143,6 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'downcase-region 'disabled nil)
-
 
 ;; (require 'package)
 ;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
