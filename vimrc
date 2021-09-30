@@ -32,6 +32,7 @@ call vundle#begin()
 	Plugin 'Shougo/vimproc.vim'
 	Plugin 'eagletmt/ghcmod-vim'
 	Plugin 'xuhdev/vim-latex-live-preview'
+	Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 let g:ale_linters = {
