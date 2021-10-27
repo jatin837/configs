@@ -1,3 +1,7 @@
+;; This file contains basic configs like
+;;		- no start splash screen
+;;		- no scroll bar
+;;		- no tool bar 
 
 (setq inhibit-startup-screen t)
 (setq visible-bell nil)
