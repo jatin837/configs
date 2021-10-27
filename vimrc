@@ -34,6 +34,7 @@ call vundle#begin()
 	Plugin 'xuhdev/vim-latex-live-preview'
 	Plugin 'tpope/vim-fugitive'
 	Plugin 'cespare/vim-toml'
+	Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()
 
 let g:ale_linters = {
