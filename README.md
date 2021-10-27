@@ -1,5 +1,5 @@
 # configs
-my configs for vim, tmux ...
+my configs for vim, neovim, emacs, tmux ...
 
 
 ## for vim 
