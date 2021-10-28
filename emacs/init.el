@@ -4,3 +4,6 @@
 (load base-config)
 (load plugins-config)
 
+(add-to-list 'custom-theme-load-path (concat pwd "/themes")) 
+
+(load-theme 'tron-legacy t)
