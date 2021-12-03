@@ -6,6 +6,8 @@
 (setq inhibit-startup-screen t)
 (setq visible-bell nil)
 (setq default-tab-width 2)
+(setq global-visual-line-mode t)
+(setq-default word-wrap t)
 
 (scroll-bar-mode -1)
 (set-fringe-mode 10)
