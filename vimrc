@@ -38,12 +38,15 @@ call vundle#begin()
 	Plugin 'vim-scripts/indentpython.vim'
 	Plugin 'pangloss/vim-javascript'
 	Plugin 'mxw/vim-jsx'
+	Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 let g:ale_linters = {
 			\ 'haskell': ['hlint', 'hdevtools', 'hfmt'],
 			\}
 
+syntax enable
+filetype plugin indent on
 
 nnoremap <Leader>ht :GhcModType<cr>
 nnoremap <Leader>htc :GhcModTypeClear<cr>
