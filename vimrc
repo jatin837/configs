@@ -36,6 +36,8 @@ call vundle#begin()
 	Plugin 'cespare/vim-toml'
 	Plugin 'JamshedVesuna/vim-markdown-preview'
 	Plugin 'vim-scripts/indentpython.vim'
+	Plugin 'pangloss/vim-javascript'
+	Plugin 'mxw/vim-jsx'
 call vundle#end()
 
 let g:ale_linters = {
