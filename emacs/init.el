@@ -1,7 +1,7 @@
 ;; set the prefix for this directory
 ;; this file is linked to ~/.emacs
 
-(setq pwd "~/.dotfiles/configs/emacs")
+(setq pwd "~/.dotfiles/emacs")
 
 
 (setq base-config (concat pwd "/base.el"))

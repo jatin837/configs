@@ -34,6 +34,7 @@ call vundle#begin()
 	Plugin 'xuhdev/vim-latex-live-preview'
 	Plugin 'tpope/vim-fugitive'
 	Plugin 'cespare/vim-toml'
+	Plugin 'integralist/vim-mypy'
 	Plugin 'JamshedVesuna/vim-markdown-preview'
 	Plugin 'vim-scripts/indentpython.vim'
 	Plugin 'pangloss/vim-javascript'
@@ -61,6 +62,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'kylelaker/riscv.vim'
 	Plug 'mhinz/vim-startify'
 call plug#end()
 
