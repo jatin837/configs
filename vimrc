@@ -22,6 +22,7 @@ set directory=$HOME/.vim/swapfiles//
 
 call vundle#begin()
 	Plugin 'preservim/nerdcommenter'
+	Plugin 'preservim/vim-pencil'
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'preservim/nerdtree'
 	Plugin 'vim-airline/vim-airline'
@@ -59,6 +60,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 	Plug 'jceb/vim-orgmode'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'junegunn/goyo.vim'
 	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -70,6 +72,8 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_set = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:livepreview_previewer = 'okular'
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
